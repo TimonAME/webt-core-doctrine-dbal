@@ -1,0 +1,32 @@
+{% extends 'index.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center pt-3">USARPS Championship</h1>
+        <h3 class="text-center text-muted small" style="font-weight: 300;">03.04.2024</h3>
+        <div class="row mt-4">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Round</th>
+                    <th scope="col">Player 1</th>
+                    <th scope="col">Player 2</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for round in data %}
+                    <tr>
+                        <th scope="row">{{ round.round }}</th>
+                        <td>{{ round.player1 }}</td>
+                        <td>{{ round.player2 }}</td>
+                        <td>{{ round.date }}</td>
+                        <td>{{ round.time }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
