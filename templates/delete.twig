@@ -1,0 +1,16 @@
+{% extends 'index.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center pt-3">Delete Game Round</h1>
+        <div class="row mt-4">
+            <form action="delete.php" method="post">
+                <div class="mb-3">
+                    <label for="roundId" class="form-label">Round ID</label>
+                    <input type="number" class="form-control" id="roundId" name="roundId" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

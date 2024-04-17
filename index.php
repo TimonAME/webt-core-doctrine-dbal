@@ -22,6 +22,8 @@ $queryBuilder
 
 $result = $queryBuilder->fetchAllAssociative();
 
+
+
 /*** Twig ***
  * composer require "twig/twig"
  */
@@ -31,8 +33,22 @@ use Twig\Loader\FilesystemLoader;
 $loader = new FilesystemLoader('templates');
 $twig = new Environment($loader);
 
+// Get the page from the URL parameters
+$page = $_GET['page'] ?? 'home';
+
+// Map the page to a template
+$templateMap = [
+    'insert' => 'insert.twig',
+    'delete' => 'delete.twig',
+    'home' => 'rounds.twig',
+];
+
+// Get the template name, default to 'home.twig' if the page is not found in the map
+$templateName = $templateMap[$page] ?? $templateMap['home'];
+
 // Render the template using Twig
 try {
-    echo $twig->render('rounds.twig', ['data' => $result]);
+    echo $twig->render('index.twig', ['templateName' => $templateName, 'data' => $result]);
 } catch (\Twig\Error\LoaderError|\Twig\Error\SyntaxError|\Twig\Error\RuntimeError $e) {
+    // Handle the error
 }

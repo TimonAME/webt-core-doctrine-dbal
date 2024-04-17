@@ -1,0 +1,36 @@
+{% extends 'index.twig' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center pt-3">Insert New Game Round</h1>
+        <div class="row mt-4">
+            <form action="insert.php" method="post">
+                <div class="mb-3">
+                    <label for="player1" class="form-label">Player 1</label>
+                    <select class="form-control" id="player1" name="player1" required>
+                        <option value="Rock">Rock</option>
+                        <option value="Paper">Paper</option>
+                        <option value="Scissors">Scissors</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="player2" class="form-label">Player 2</label>
+                    <select class="form-control" id="player2" name="player2" required>
+                        <option value="Rock">Rock</option>
+                        <option value="Paper">Paper</option>
+                        <option value="Scissors">Scissors</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" name="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -13,6 +13,7 @@
                     <th scope="col">Player 2</th>
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,12 @@
                         <td>{{ round.player2 }}</td>
                         <td>{{ round.date }}</td>
                         <td>{{ round.time }}</td>
+                        <td>
+                            <form action="delete.php" method="post">
+                                <input type="hidden" name="roundId" value="{{ round.round }}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
