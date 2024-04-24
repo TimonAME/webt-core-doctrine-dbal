@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 
 use Doctrine\DBAL\DriverManager;
 
-//..
+// ..
 $connectionParams = [
     'dbname' => 'tournament_db',
     'user' => 'root',
