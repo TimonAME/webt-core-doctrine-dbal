@@ -1,4 +1,25 @@
 <?php
+
+require_once 'vendor/autoload.php';
+require_once 'bootstrap.php';
+
+use entities\GameRound;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $roundId = $_POST['roundId'];
+
+    $gameRound = $entityManager->find(GameRound::class, $roundId);
+
+    if ($gameRound !== null) {
+        $entityManager->remove($gameRound);
+        $entityManager->flush();
+    }
+
+    header('Location: index.php?page=home');
+    exit;
+}
+
+/*
 require_once 'vendor/autoload.php';
 
 use Doctrine\DBAL\DriverManager;
@@ -31,3 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: index.php?page=home');
     exit;
 }
+*/

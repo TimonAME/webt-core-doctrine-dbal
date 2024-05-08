@@ -1,4 +1,5 @@
 <?php
+/*
 require_once 'vendor/autoload.php';
 
 use Doctrine\DBAL\DriverManager;
@@ -21,7 +22,30 @@ $queryBuilder
 ;
 
 $result = $queryBuilder->fetchAllAssociative();
+*/
 
+require_once 'vendor/autoload.php';
+require_once 'bootstrap.php';
+
+use entities\GameRound;
+
+// Get the repository for the GameRound entity
+$gameRoundRepository = $entityManager->getRepository(GameRound::class);
+
+// Fetch all game rounds
+$gameRounds = $gameRoundRepository->findAll();
+
+// Prepare the data for the template
+$result = [];
+foreach ($gameRounds as $gameRound) {
+    $result[] = [
+        'round' => $gameRound->getId(),
+        'player1' => $gameRound->getPlayer1(),
+        'player2' => $gameRound->getPlayer2(),
+        'date' => $gameRound->getDate()->format('Y-m-d'),
+        'time' => $gameRound->getTime()->format('H:i:s'),
+    ];
+}
 
 
 /*** Twig ***

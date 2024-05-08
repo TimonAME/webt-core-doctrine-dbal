@@ -1,4 +1,5 @@
 <?php
+/*
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once 'bootstrap.php';
 
@@ -15,3 +16,4 @@ $entityManager->persist($gameRound);
 $entityManager->flush();
 
 echo "Created Game Round with ID " . $gameRound->getId() . "\n";
+*/

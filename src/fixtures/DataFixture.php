@@ -1,6 +1,8 @@
 <?php
 namespace DataFixtures;
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use entities\GameRound;
@@ -20,5 +22,3 @@ class GameRoundFixtures implements FixtureInterface
         $manager->flush();
     }
 }
-
-// TODO: fixture laden und ausführen -> selects ausgeben
