@@ -29,10 +29,7 @@ $entityManager = new EntityManager($connection, $config);
 
 
 // ###### fixtures ######
-
-require_once __DIR__ . '/../../vendor/autoload.php';
-require_once 'bootstrap.php';
-
+/*
 use Doctrine\Common\DataFixtures\Loader;
 use DataFixtures\GameRoundFixtures;
 
@@ -46,3 +43,4 @@ use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 
 $executor = new ORMExecutor($entityManager, new ORMPurger());
 $executor->execute($loader->getFixtures());
+*/

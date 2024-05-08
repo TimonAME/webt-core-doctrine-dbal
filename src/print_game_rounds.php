@@ -1,8 +1,9 @@
 <?php
-
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once 'bootstrap.php';
 
-/*
+use entities\GameRound;
+
 $gameRoundRepository = $entityManager->getRepository(GameRound::class);
 $gameRounds = $gameRoundRepository->findAll();
 
@@ -15,15 +16,4 @@ foreach ($gameRounds as $gameRound) {
         $gameRound->getDate()->format('Y-m-d'),
         $gameRound->getTime()->format('H:i:s')
     );
-}
-*/
-
-// list_products.php
-require_once "bootstrap.php";
-
-$gameroundsRepository = $entityManager->getRepository('GameRound');
-$gamerounds = $gameroundsRepository->findAll();
-
-foreach ($gamerounds as $round) {
-    echo sprintf("-%s\n", $round->getId());
 }
