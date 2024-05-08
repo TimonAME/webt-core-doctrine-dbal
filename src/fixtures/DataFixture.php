@@ -1,5 +1,4 @@
 <?php
-
 namespace DataFixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;

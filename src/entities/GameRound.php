@@ -99,6 +99,4 @@ class GameRound
     {
         $this->time = $time;
     }
-
-
 }
