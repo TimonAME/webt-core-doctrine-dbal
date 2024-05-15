@@ -36,8 +36,6 @@ use DataFixtures\GameRoundFixtures;
 $loader = new Loader();
 $loader->addFixture(new GameRoundFixtures());
 
-//TODO: composer dump-autoload -> error Code
-
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 

@@ -1,0 +1,27 @@
+{
+    "name": "timon/webt-core-doctrine-dbal",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Timon\\WebtCoreDoctrineDbal\\": "src/",
+            "entities\\" : "src/entities/",
+            "DataFixtures\\" : "src/fixtures/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TimonAME",
+            "email": "timon-a@outlook.at"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^4.0",
+        "twig/twig": "^3.8",
+        "doctrine/orm": "^3.1",
+        "doctrine/data-fixtures": "^1.7",
+        "symfony/cache": "^7.0"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.6"
+    }
+}
